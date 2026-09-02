@@ -1,44 +1,52 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>BOAT RACE｜展示データ分析</title>
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ガチ艇｜個人用予想サイト</title>
 <style>
-:root{--bg:#050b10;--panel:#101b24;--line:#2b4656;--text:#f4f7f9;--muted:#91a5b1;--cyan:#19c7ff;--gold:#ffd65a}
-*{box-sizing:border-box}body{margin:0;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;background:radial-gradient(circle at 50% -5%,#173b4d 0,#071018 42%,#03070a 100%);min-height:100vh}
-header{padding:20px 12px 16px;background:linear-gradient(#0e202c,#071018);border-bottom:1px solid #294452;box-shadow:0 8px 30px #0009}
-.brand{max-width:760px;margin:auto;text-align:center}.small{font-size:10px;color:#64d8f5;font-weight:900;letter-spacing:.18em}.brand h1{margin:5px 0;font-size:25px;letter-spacing:.08em}.sub{font-size:11px;color:var(--muted)}
-.ticker{max-width:760px;margin:14px auto 0;padding:9px;border:1px solid #315363;border-radius:7px;background:#020609;display:flex;justify-content:center;gap:8px;font:11px ui-monospace,monospace;color:#62dfff;box-shadow:inset 0 0 18px #000}
-main{max-width:760px;margin:auto;padding:18px 10px 35px}.section{display:flex;justify-content:space-between;align-items:end;margin:2px 2px 10px}.section h2{font-size:17px;margin:0}.section p{font-size:10px;color:var(--muted);margin:0}
-.boat{margin:12px 0;background:linear-gradient(145deg,#14242f,#0a141c);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 10px 25px #0007}
-.head{display:flex;align-items:center;gap:10px;padding:9px 11px;border-bottom:1px solid #263e4b}.number{width:38px;height:38px;border-radius:7px;display:grid;place-items:center;font-size:20px;font-weight:950;border:2px solid #ffffff99;box-shadow:0 2px 8px #0008}.name{font-weight:900}.tag{margin-left:auto;color:#8299a5;font:10px ui-monospace,monospace}
-.body{padding:11px}.inputs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}label{display:block;color:#9fb0ba;font-size:10px;margin:0 0 5px 2px}select{width:100%;height:44px;border:1px solid #3a5968;border-radius:7px;background:#060d12;color:#fff;padding:0 8px;font-size:15px;font-weight:800;outline:none}select:focus{border-color:var(--cyan);box-shadow:0 0 0 2px #19c7ff22}
-.total{margin-top:10px;padding:9px 12px;border:1px solid #29414e;border-radius:8px;background:#04090d;display:flex;justify-content:space-between;align-items:center}.total-label{font-size:10px;color:#91a5b1}.value{font:900 24px ui-monospace,monospace;color:var(--gold);text-shadow:0 0 10px #ffd65a44}
-.result{margin-top:20px;padding:13px;border:1px solid #315363;border-radius:12px;background:linear-gradient(#10212c,#09131a)}.result-title{font-size:13px;font-weight:900;margin-bottom:9px}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.card{background:#050b0f;border:1px solid #294451;border-radius:7px;text-align:center;padding:8px}.boatno{font-size:10px;color:#9eb0ba}.sum{margin-top:2px;font:900 16px ui-monospace,monospace;color:var(--gold)}
-footer{text-align:center;color:#607681;font-size:9px;padding-bottom:18px}
-@media(max-width:560px){.inputs{grid-template-columns:1fr}.brand h1{font-size:22px}.summary{grid-template-columns:repeat(2,1fr)}select{height:46px}}
-</style>
-</head>
+*{box-sizing:border-box}body{margin:0;background:#03080d;color:#f4f7fa;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP",sans-serif}
+:root{--b:#0750cf;--line:#30485c;--gold:#ffd44d;--muted:#9aadb9}
+header{background:radial-gradient(circle at 75% 40%,#123e6d,#071523 38%,#03080d 75%);padding:12px;border-bottom:1px solid #35536d}
+.hero{max-width:1180px;margin:auto;display:flex;align-items:center;gap:18px;min-height:150px}
+.logo{width:108px;height:108px;border-radius:24px;border:2px solid #3978ff;background:#082fa5;object-fit:cover}
+.brand h1{font-size:46px;margin:0;font-weight:950;letter-spacing:.1em}.brand p{margin:8px 0;color:#d7e5ef;font-size:13px}.art{margin-left:auto;font-size:76px;filter:drop-shadow(0 8px 8px #000)}
+nav{max-width:1180px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr)}nav button{height:46px;background:linear-gradient(#121a22,#070d13);color:white;border:1px solid #40505d;font-weight:900;cursor:pointer}nav button:first-child{background:linear-gradient(#155bd8,#063b9d)}
+main{max-width:1180px;margin:auto;padding:12px}.panel{background:linear-gradient(145deg,#0d1d2a,#071017);border:1px solid #35516a;border-radius:6px;margin-bottom:12px;overflow:hidden;box-shadow:0 8px 22px #0008}.title{padding:9px 13px;background:linear-gradient(90deg,#073d9e,#092654);font-weight:950;font-size:17px}
+.cols{display:grid;grid-template-columns:repeat(6,1fr)}.col{padding:7px;border-right:1px dotted #415361}.col:last-child{border:0}.num{height:34px;display:grid;place-items:center;border-radius:4px;font-weight:950;font-size:19px;border:1px solid #fff8;margin-bottom:6px}.n1{background:#f4f4f4;color:#111}.n2{background:#101214}.n3{background:#df292f}.n4{background:#1462d1}.n5{background:#ffd21b;color:#111}.n6{background:#3a9d2c}
+.group{padding:5px 0;border-bottom:1px dotted #42515c}.group:last-child{border:0}.group h3{font-size:12px;color:#62d9ff;margin:0 0 4px}label{display:block;font-size:10px;color:#aab9c3;margin:5px 0 3px}select{width:100%;height:32px;background:#050a0f;color:#fff;border:1px solid #3c5262;border-radius:4px;font-size:12px;padding:0 4px}.total{text-align:center;font-size:23px;font-weight:950;padding:4px;color:white}
+.actions{display:grid;grid-template-columns:1fr 1.4fr 1.4fr;gap:9px;padding:9px}.btn{height:42px;border-radius:5px;border:1px solid #5b90ff;background:linear-gradient(#0759dc,#063993);color:#fff;font-weight:950}.reset{background:linear-gradient(#63798b,#405364);border-color:#8799a8}
+.tablewrap{overflow:auto}.table{border-collapse:collapse;width:100%;min-width:900px;font-size:11px}.table th,.table td{border:1px solid #294354;padding:5px;text-align:center}.table th{background:#082450}.table td{background:#071017}.gold{color:var(--gold);font-weight:950}
+.lower{display:grid;grid-template-columns:1.2fr .8fr;gap:12px}.predrow{display:grid;grid-template-columns:45px 1fr 75px;align-items:center;padding:10px;border-bottom:1px solid #293b46}.predrow:last-child{border:0}.combo{font-size:22px;font-weight:950;letter-spacing:.06em}.ball{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:4px;font-size:16px;border:1px solid #fff8;margin:0 2px}.p1{background:#f5f5f5;color:#111}.p2{background:#111}.p3{background:#df292f}.p4{background:#1462d1}.p5{background:#ffd21b;color:#111}.p6{background:#3a9d2c}.score{text-align:right;color:var(--gold);font-weight:950;font-size:12px}.rules{padding:9px;font-size:11px}.rule{padding:8px;border-bottom:1px solid #293f4c}.rule b{display:inline-block;color:#62d9ff;min-width:100px}footer{text-align:center;color:#70828e;font-size:10px;padding:8px 0 20px}
+@media(max-width:800px){.hero{min-height:110px}.logo{width:78px;height:78px;border-radius:17px}.brand h1{font-size:30px}.art{font-size:45px}.cols{grid-template-columns:repeat(2,1fr)}.col:nth-child(2n){border-right:0}.lower{grid-template-columns:1fr}}
+@media(max-width:520px){.brand h1{font-size:25px}.brand p{font-size:9px}.art{display:none}.cols{grid-template-columns:1fr}.col{border-right:0}.actions{grid-template-columns:1fr}nav button{font-size:10px}}
+</style></head>
 <body>
-<header>
-<div class="brand"><div class="small">BOAT RACE EXHIBITION DATA</div><h1>展示データ分析</h1><div class="sub">展示タイム・まわり足・直線を入力して合計を表示</div></div>
-<div class="ticker"><span>◆ EXHIBITION DATA</span><span>/</span><span>6 BOATS</span><span>/</span><span>AUTO TOTAL</span></div>
-</header>
+<header><div class="hero"><img class="logo" src="https://crent5599.github.io/boat-race-exhibition-total/assets/gachitei-logo.jpg" onerror="this.style.display='none'" alt="ガチ艇">
+<div class="brand"><h1>ガチ艇</h1><p>個人用予想サイト　｜　データを入力して三連単をガチ予想！</p></div><div class="art">🚤💨</div></div>
+<nav><button onclick="jump('input')">① データ入力</button><button onclick="jump('summary')">② 入力データ一覧</button><button onclick="jump('rules')">③ ポイント一覧</button><button onclick="jump('prediction')">④ 三連単予想</button></nav></header>
 <main>
-<div class="section"><h2>6艇の展示データ入力</h2><p>選択すると自動計算</p></div>
-<div id="boats"></div>
-<section class="result"><div class="result-title">▣ 6艇 総合データ</div><div class="summary" id="summary"></div></section>
-</main>
-<footer>BOAT RACE STYLE • 展示データ合計</footer>
+<section id="input" class="panel"><div class="title">データ入力（6艇分）</div><div id="cols" class="cols"></div><div class="actions"><button class="btn reset" onclick="resetAll()">リセット</button><button class="btn" onclick="render()">入力データを反映</button><button class="btn" onclick="jump('prediction')">三連単を予想する</button></div></section>
+<section id="summary" class="panel"><div class="title">入力データ一覧（6艇）</div><div class="tablewrap"><table class="table"><thead><tr><th>艇番</th><th>展示</th><th>まくり足</th><th>直線</th><th>合計</th><th>1着</th><th>2着</th><th>3着</th><th>階級</th><th>調子</th><th>総合pt</th></tr></thead><tbody id="body"></tbody></table></div></section>
+<div class="lower"><section id="prediction" class="panel"><div class="title">三連単予想 TOP5</div><div id="pred"></div></section>
+<section id="rules" class="panel"><div class="title">ポイント配点ルール</div><div class="rules">
+<div class="rule"><b>展示データ</b>合計が小さい順：3 / 2.5 / 2 / 1.5 / 1 / 0.5点</div>
+<div class="rule"><b>過去10走</b>1着・2着・3着の各最多艇に1点</div>
+<div class="rule"><b>階級</b>A1：2点、A2/B1/B2：1点</div>
+<div class="rule"><b>調子</b>1：3、2：2.5、3：2、4：1.5、5：1、6：0.5点</div>
+<div class="rule"><b>艇番</b>1号艇：3点、2〜4号艇：2点、5〜6号艇：1点</div>
+</div></section></div>
+</main><footer>GACHI-TEI • PERSONAL BOAT RACE PREDICTION</footer>
 <script>
-const colors=[["#f5f5f5","#111"],["#171b20","#fff"],["#e43b35","#fff"],["#1976d2","#fff"],["#f2c500","#111"],["#16a05d","#fff"]];
-function options(){let s='<option value="">選択</option>';for(let i=550;i<=850;i+=5)s+=`<option value="${(i/100).toFixed(2)}">${(i/100).toFixed(2)}</option>`;return s}
-const opt=options(),boats=document.getElementById("boats"),summary=document.getElementById("summary");
-for(let i=1;i<=6;i++){let e=document.createElement("section");e.className="boat";e.innerHTML=`<div class="head"><div class="number" style="background:${colors[i-1][0]};color:${colors[i-1][1]}">${i}</div><div class="name">${i}号艇</div><div class="tag">BOAT ${String(i).padStart(2,"0")}</div></div><div class="body"><div class="inputs"><div><label>展示タイム</label><select class="ex">${opt}</select></div><div><label>まわり足</label><select class="turn">${opt}</select></div><div><label>直線</label><select class="straight">${opt}</select></div></div><div class="total"><span class="total-label">展示データ合計</span><span class="value">—</span></div></div>`;boats.appendChild(e)}
-summary.innerHTML=Array.from({length:6},(_,i)=>`<div class="card"><div class="boatno">${i+1}号艇</div><div class="sum" id="sum${i+1}">—</div></div>`).join("");
-function update(card){let a=card.querySelector(".ex").value,b=card.querySelector(".turn").value,c=card.querySelector(".straight").value,n=card.querySelector(".number").textContent;if(a&&b&&c){let t=(+a + +b + +c).toFixed(2);card.querySelector(".value").textContent=t;document.getElementById("sum"+n).textContent=t}else{card.querySelector(".value").textContent="—";document.getElementById("sum"+n).textContent="—"}}
-document.querySelectorAll(".boat").forEach(c=>c.querySelectorAll("select").forEach(s=>s.addEventListener("change",()=>update(c))));
-</script>
-</body>
-</html>
+const C=['p1','p2','p3','p4','p5','p6'];
+function opt(a,b,s){let x='<option value="">選択</option>';for(let i=a;i<=b+.001;i+=s)x+=`<option>${i.toFixed(2)}</option>`;return x}
+function ints(){let x='<option value="">選択</option>';for(let i=0;i<=10;i++)x+=`<option>${i}</option>`;return x}
+function forms(){let x='<option value="">選択</option>';for(let i=1;i<=6;i++)x+=`<option>${i}</option>`;return x}
+const cl='<option value="">選択</option><option>A1</option><option>A2</option><option>B1</option><option>B2</option>';
+let cols='';for(let i=1;i<=6;i++)cols+=`<div class="col"><div class="num n${i}">${i}号艇</div><div class="group"><h3>展示データ</h3><label>展示タイム</label><select id="ex${i}">${opt(6,8,.05)}</select><label>まくり足タイム</label><select id="tu${i}">${opt(6,8,.05)}</select><label>直線タイム</label><select id="st${i}">${opt(6,8,.05)}</select><div class="total" id="to${i}">—</div></div><div class="group"><h3>過去10走</h3><label>1着数</label><select id="w${i}">${ints()}</select><label>2着数</label><select id="s${i}">${ints()}</select><label>3着数</label><select id="t${i}">${ints()}</select></div><div class="group"><h3>階級・調子</h3><label>階級</label><select id="cl${i}">${cl}</select><label>調子の良さ</label><select id="fo${i}">${forms()}</select></div></div>`;
+document.getElementById('cols').innerHTML=cols;
+function v(id){let x=document.getElementById(id).value;return x===''?null:Number(x)}
+function get(){return Array.from({length:6},(_,z)=>{let i=z+1,e=v('ex'+i),u=v('tu'+i),s=v('st'+i);return{i,e,u,s,total:e!=null&&u!=null&&s!=null?+(e+u+s).toFixed(2):null,w:v('w'+i),s2:v('s'+i),t:v('t'+i),cl:document.getElementById('cl'+i).value,fo:v('fo'+i),score:0}})}
+function render(){let d=get(),pts=[3,2.5,2,1.5,1,.5];if(d.every(x=>x.total!=null))[...d].sort((a,b)=>a.total-b.total).forEach((x,i)=>x.score+=pts[i]);['w','s2','t'].forEach(k=>{let a=d.map(x=>x[k]).filter(x=>x!=null);if(a.length===6){let m=Math.max(...a);d.filter(x=>x[k]===m).forEach(x=>x.score+=1)}});d.forEach(x=>{if(x.cl)x.score+=x.cl==='A1'?2:1;if(x.fo!=null)x.score+=[0,3,2.5,2,1.5,1,.5][x.fo];x.score+=x.i===1?3:x.i<=4?2:1;document.getElementById('to'+x.i).textContent=x.total==null?'—':x.total.toFixed(2)});
+document.getElementById('body').innerHTML=d.map(x=>`<tr><td><span class="ball ${C[x.i-1]}">${x.i}</span></td><td>${x.e??'—'}</td><td>${x.u??'—'}</td><td>${x.s??'—'}</td><td class="gold">${x.total==null?'—':x.total.toFixed(2)}</td><td>${x.w??'—'}</td><td>${x.s2??'—'}</td><td>${x.t??'—'}</td><td>${x.cl||'—'}</td><td>${x.fo??'—'}</td><td class="gold">${x.score.toFixed(1)}</td></tr>`).join('');
+let a=[];for(let i=0;i<6;i++)for(let j=0;j<6;j++)for(let k=0;k<6;k++)if(i!=j&&i!=k&&j!=k)a.push({a:i+1,b:j+1,c:k+1,sc:d[i].score+d[j].score+d[k].score,tie:d[i].score*100+d[j].score*10+d[k].score});a.sort((x,y)=>y.sc-x.sc||y.tie-x.tie);
+document.getElementById('pred').innerHTML=a.slice(0,5).map((x,i)=>`<div class="predrow"><b>NO.${i+1}</b><div class="combo"><span class="ball ${C[x.a-1]}">${x.a}</span>→<span class="ball ${C[x.b-1]}">${x.b}</span>→<span class="ball ${C[x.c-1]}">${x.c}</span></div><div class="score">${x.sc.toFixed(1)} pt</div></div>`).join('')}
+function resetAll(){document.querySelectorAll('select').forEach(x=>x.value='');render()}function jump(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}document.addEventListener('change',render);render();
+</script></body></html>
