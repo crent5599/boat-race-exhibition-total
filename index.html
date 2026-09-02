@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>展示データ合計</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#eef5f9;color:#18263d;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP",sans-serif}
+.wrap{max-width:900px;margin:auto;padding:14px}.card{background:#fff;border-radius:22px;padding:20px;margin-bottom:14px;box-shadow:0 4px 16px #0000000d}
+h1{margin:0;font-size:27px}.sub{color:#718198;line-height:1.7}.boat{border:2px solid #dbe6ef;border-radius:17px;padding:14px;margin-top:12px}
+.head{display:flex;align-items:center;gap:10px;margin-bottom:10px}.num{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;font-size:19px}
+.n1{background:#fff;color:#222;border:2px solid #333}.n2{background:#111}.n3{background:#e53935}.n4{background:#1976d2}.n5{background:#f2b900;color:#222}.n6{background:#168b32}
+.title{font-size:20px;font-weight:800}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+label{font-size:14px;font-weight:700;color:#617187}select{width:100%;margin-top:5px;padding:11px 8px;border:2px solid #d8e3ec;border-radius:11px;background:#fff;font-size:16px;color:#18263d}
+.sum{margin-top:10px;padding:11px 13px;background:#f2f7fb;border-radius:11px;font-weight:800;font-size:18px}.sum b{font-size:25px}
+.results{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.result{border:2px solid #dbe6ef;border-radius:14px;padding:13px;text-align:center}.result b{font-size:25px}
+@media(max-width:650px){.grid{grid-template-columns:1fr}.results{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body><main class="wrap">
+<section class="card"><h1>展示データ合計</h1>
+<p class="sub">6艇の「展示タイム・まわり足・直線」を選択入力すると、各艇ごとの合計を自動計算します。</p></section>
+<section class="card"><div id="boats"></div></section>
+<section class="card"><h2>各艇の合計</h2><div id="results" class="results"></div></section>
+</main>
+<script>
+const boatBox=document.getElementById("boats"), resultBox=document.getElementById("results");
+function opts(){let s='<option value="">選択</option>';for(let i=550;i<=850;i+=5){let v=(i/100).toFixed(2);s+=`<option value="${v}">${v}</option>`}return s}
+for(let n=1;n<=6;n++)boatBox.insertAdjacentHTML("beforeend",`
+<div class="boat"><div class="head"><div class="num n${n}">${n}</div><div class="title">${n}号艇</div></div>
+<div class="grid">
+<label>展示タイム<select class="d" data-n="${n}">${opts()}</select></label>
+<label>まわり足<select class="d" data-n="${n}">${opts()}</select></label>
+<label>直線<select class="d" data-n="${n}">${opts()}</select></label>
+</div><div class="sum">合計：<b id="s${n}">—</b></div></div>`);
+function update(){
+let out="";
+for(let n=1;n<=6;n++){let a=[...document.querySelectorAll(`.d[data-n="${n}"]`)].map(x=>Number(x.value));let ok=a.every(Number.isFinite)&&a.every(x=>x>0);let t=ok?a.reduce((x,y)=>x+y,0):null;
+document.getElementById("s"+n).textContent=t===null?"—":t.toFixed(2);
+out+=`<div class="result"><div>${n}号艇</div><b>${t===null?"—":t.toFixed(2)}</b></div>`}
+resultBox.innerHTML=out}
+document.addEventListener("change",update);update();
+</script></body></html>
