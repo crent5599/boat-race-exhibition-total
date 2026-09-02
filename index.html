@@ -1,43 +1,44 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>展示データ合計</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>BOAT RACE｜展示データ分析</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#eef5f9;color:#18263d;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP",sans-serif}
-.wrap{max-width:900px;margin:auto;padding:14px}.card{background:#fff;border-radius:22px;padding:20px;margin-bottom:14px;box-shadow:0 4px 16px #0000000d}
-h1{margin:0;font-size:27px}.sub{color:#718198;line-height:1.7}.boat{border:2px solid #dbe6ef;border-radius:17px;padding:14px;margin-top:12px}
-.head{display:flex;align-items:center;gap:10px;margin-bottom:10px}.num{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;font-size:19px}
-.n1{background:#fff;color:#222;border:2px solid #333}.n2{background:#111}.n3{background:#e53935}.n4{background:#1976d2}.n5{background:#f2b900;color:#222}.n6{background:#168b32}
-.title{font-size:20px;font-weight:800}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-label{font-size:14px;font-weight:700;color:#617187}select{width:100%;margin-top:5px;padding:11px 8px;border:2px solid #d8e3ec;border-radius:11px;background:#fff;font-size:16px;color:#18263d}
-.sum{margin-top:10px;padding:11px 13px;background:#f2f7fb;border-radius:11px;font-weight:800;font-size:18px}.sum b{font-size:25px}
-.results{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.result{border:2px solid #dbe6ef;border-radius:14px;padding:13px;text-align:center}.result b{font-size:25px}
-@media(max-width:650px){.grid{grid-template-columns:1fr}.results{grid-template-columns:repeat(2,1fr)}}
+:root{--bg:#050b10;--panel:#101b24;--line:#2b4656;--text:#f4f7f9;--muted:#91a5b1;--cyan:#19c7ff;--gold:#ffd65a}
+*{box-sizing:border-box}body{margin:0;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;background:radial-gradient(circle at 50% -5%,#173b4d 0,#071018 42%,#03070a 100%);min-height:100vh}
+header{padding:20px 12px 16px;background:linear-gradient(#0e202c,#071018);border-bottom:1px solid #294452;box-shadow:0 8px 30px #0009}
+.brand{max-width:760px;margin:auto;text-align:center}.small{font-size:10px;color:#64d8f5;font-weight:900;letter-spacing:.18em}.brand h1{margin:5px 0;font-size:25px;letter-spacing:.08em}.sub{font-size:11px;color:var(--muted)}
+.ticker{max-width:760px;margin:14px auto 0;padding:9px;border:1px solid #315363;border-radius:7px;background:#020609;display:flex;justify-content:center;gap:8px;font:11px ui-monospace,monospace;color:#62dfff;box-shadow:inset 0 0 18px #000}
+main{max-width:760px;margin:auto;padding:18px 10px 35px}.section{display:flex;justify-content:space-between;align-items:end;margin:2px 2px 10px}.section h2{font-size:17px;margin:0}.section p{font-size:10px;color:var(--muted);margin:0}
+.boat{margin:12px 0;background:linear-gradient(145deg,#14242f,#0a141c);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 10px 25px #0007}
+.head{display:flex;align-items:center;gap:10px;padding:9px 11px;border-bottom:1px solid #263e4b}.number{width:38px;height:38px;border-radius:7px;display:grid;place-items:center;font-size:20px;font-weight:950;border:2px solid #ffffff99;box-shadow:0 2px 8px #0008}.name{font-weight:900}.tag{margin-left:auto;color:#8299a5;font:10px ui-monospace,monospace}
+.body{padding:11px}.inputs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}label{display:block;color:#9fb0ba;font-size:10px;margin:0 0 5px 2px}select{width:100%;height:44px;border:1px solid #3a5968;border-radius:7px;background:#060d12;color:#fff;padding:0 8px;font-size:15px;font-weight:800;outline:none}select:focus{border-color:var(--cyan);box-shadow:0 0 0 2px #19c7ff22}
+.total{margin-top:10px;padding:9px 12px;border:1px solid #29414e;border-radius:8px;background:#04090d;display:flex;justify-content:space-between;align-items:center}.total-label{font-size:10px;color:#91a5b1}.value{font:900 24px ui-monospace,monospace;color:var(--gold);text-shadow:0 0 10px #ffd65a44}
+.result{margin-top:20px;padding:13px;border:1px solid #315363;border-radius:12px;background:linear-gradient(#10212c,#09131a)}.result-title{font-size:13px;font-weight:900;margin-bottom:9px}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.card{background:#050b0f;border:1px solid #294451;border-radius:7px;text-align:center;padding:8px}.boatno{font-size:10px;color:#9eb0ba}.sum{margin-top:2px;font:900 16px ui-monospace,monospace;color:var(--gold)}
+footer{text-align:center;color:#607681;font-size:9px;padding-bottom:18px}
+@media(max-width:560px){.inputs{grid-template-columns:1fr}.brand h1{font-size:22px}.summary{grid-template-columns:repeat(2,1fr)}select{height:46px}}
 </style>
 </head>
-<body><main class="wrap">
-<section class="card"><h1>展示データ合計</h1>
-<p class="sub">6艇の「展示タイム・まわり足・直線」を選択入力すると、各艇ごとの合計を自動計算します。</p></section>
-<section class="card"><div id="boats"></div></section>
-<section class="card"><h2>各艇の合計</h2><div id="results" class="results"></div></section>
+<body>
+<header>
+<div class="brand"><div class="small">BOAT RACE EXHIBITION DATA</div><h1>展示データ分析</h1><div class="sub">展示タイム・まわり足・直線を入力して合計を表示</div></div>
+<div class="ticker"><span>◆ EXHIBITION DATA</span><span>/</span><span>6 BOATS</span><span>/</span><span>AUTO TOTAL</span></div>
+</header>
+<main>
+<div class="section"><h2>6艇の展示データ入力</h2><p>選択すると自動計算</p></div>
+<div id="boats"></div>
+<section class="result"><div class="result-title">▣ 6艇 総合データ</div><div class="summary" id="summary"></div></section>
 </main>
+<footer>BOAT RACE STYLE • 展示データ合計</footer>
 <script>
-const boatBox=document.getElementById("boats"), resultBox=document.getElementById("results");
-function opts(){let s='<option value="">選択</option>';for(let i=550;i<=850;i+=5){let v=(i/100).toFixed(2);s+=`<option value="${v}">${v}</option>`}return s}
-for(let n=1;n<=6;n++)boatBox.insertAdjacentHTML("beforeend",`
-<div class="boat"><div class="head"><div class="num n${n}">${n}</div><div class="title">${n}号艇</div></div>
-<div class="grid">
-<label>展示タイム<select class="d" data-n="${n}">${opts()}</select></label>
-<label>まわり足<select class="d" data-n="${n}">${opts()}</select></label>
-<label>直線<select class="d" data-n="${n}">${opts()}</select></label>
-</div><div class="sum">合計：<b id="s${n}">—</b></div></div>`);
-function update(){
-let out="";
-for(let n=1;n<=6;n++){let a=[...document.querySelectorAll(`.d[data-n="${n}"]`)].map(x=>Number(x.value));let ok=a.every(Number.isFinite)&&a.every(x=>x>0);let t=ok?a.reduce((x,y)=>x+y,0):null;
-document.getElementById("s"+n).textContent=t===null?"—":t.toFixed(2);
-out+=`<div class="result"><div>${n}号艇</div><b>${t===null?"—":t.toFixed(2)}</b></div>`}
-resultBox.innerHTML=out}
-document.addEventListener("change",update);update();
-</script></body></html>
+const colors=[["#f5f5f5","#111"],["#171b20","#fff"],["#e43b35","#fff"],["#1976d2","#fff"],["#f2c500","#111"],["#16a05d","#fff"]];
+function options(){let s='<option value="">選択</option>';for(let i=550;i<=850;i+=5)s+=`<option value="${(i/100).toFixed(2)}">${(i/100).toFixed(2)}</option>`;return s}
+const opt=options(),boats=document.getElementById("boats"),summary=document.getElementById("summary");
+for(let i=1;i<=6;i++){let e=document.createElement("section");e.className="boat";e.innerHTML=`<div class="head"><div class="number" style="background:${colors[i-1][0]};color:${colors[i-1][1]}">${i}</div><div class="name">${i}号艇</div><div class="tag">BOAT ${String(i).padStart(2,"0")}</div></div><div class="body"><div class="inputs"><div><label>展示タイム</label><select class="ex">${opt}</select></div><div><label>まわり足</label><select class="turn">${opt}</select></div><div><label>直線</label><select class="straight">${opt}</select></div></div><div class="total"><span class="total-label">展示データ合計</span><span class="value">—</span></div></div>`;boats.appendChild(e)}
+summary.innerHTML=Array.from({length:6},(_,i)=>`<div class="card"><div class="boatno">${i+1}号艇</div><div class="sum" id="sum${i+1}">—</div></div>`).join("");
+function update(card){let a=card.querySelector(".ex").value,b=card.querySelector(".turn").value,c=card.querySelector(".straight").value,n=card.querySelector(".number").textContent;if(a&&b&&c){let t=(+a + +b + +c).toFixed(2);card.querySelector(".value").textContent=t;document.getElementById("sum"+n).textContent=t}else{card.querySelector(".value").textContent="—";document.getElementById("sum"+n).textContent="—"}}
+document.querySelectorAll(".boat").forEach(c=>c.querySelectorAll("select").forEach(s=>s.addEventListener("change",()=>update(c))));
+</script>
+</body>
+</html>
