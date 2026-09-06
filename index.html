@@ -158,29 +158,26 @@ function simulate10(){
    let u=0,v=0; while(u===0)u=Math.random(); while(v===0)v=Math.random();
    return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);
  }
- // シミュレーション内部の優先順位：出走コース → 合計ポイント → 過去10走の選択値 → 調子 → 階級 → 展示タイム → 風・波
- const maxForm=3, maxClass=3, maxCourse=3, maxPast=10;
- const minEx=Math.min(...scored.map(x=>x.ex));
- const maxEx=Math.max(...scored.map(x=>x.ex));
+ // シミュレーション内部の優先順位：出走コース数字の小ささ → 合計Pt → 過去10走着内数 → 階級Pt → 今節の調子Pt → 風・波
+ // 展示タイムは3周の基準時間として使用し、有利性の優先順位には含めない。
+ const maxIn3=10, maxClass=3, maxForm=3;
  const minTotal=Math.min(...scored.map(x=>x.total));
  const maxTotal=Math.max(...scored.map(x=>x.total));
  const strengths=scored.map(x=>{
-   const courseScore=x.coursePt/maxCourse;
+   // 各項目を0～1に正規化。上位項目ほど係数を大きくして優先順位を反映。
+   const courseScore=(6-x.course)/5;
    const totalScore=maxTotal===minTotal?1:(x.total-minTotal)/(maxTotal-minTotal);
-   const pastScore=((x.first/maxPast)+(x.in3/maxPast))/2;
-   const formScore=x.form/maxForm;
+   const pastScore=x.in3/maxIn3;
    const classScore=x.classPt/maxClass;
-   const exScore=maxEx===minEx?1:(maxEx-x.ex)/(maxEx-minEx);
-   // 優先順位の高い項目ほどシミュレーション内部への影響を強くする
-   const priorityScore=(courseScore*0.30)+(totalScore*0.25)+(pastScore*0.18)+(formScore*0.13)+(classScore*0.09)+(exScore*0.05);
+   const formScore=x.form/maxForm;
+   const priorityScore=(courseScore*0.32)+(totalScore*0.25)+(pastScore*0.18)+(classScore*0.13)+(formScore*0.12);
    return {...x,priorityScore};
  });
  const strengthMap=new Map(strengths.map(x=>[x.n,x.priorityScore]));
  for(let r=0;r<10;r++){
    const finish=strengths.map(x=>{
      const environment=windAdv(x.course)*waveAdv(x.course);
-     // 優先順位の各項目を内部強度に反映し、風・波は最後に環境補正として反映
-     const priorityAdv=0.86+(strengthMap.get(x.n)*0.34);
+     const priorityAdv=0.84+(strengthMap.get(x.n)*0.36);
      const speedAdv=priorityAdv*environment;
      let total=0;
      for(let lap=0;lap<3;lap++){
