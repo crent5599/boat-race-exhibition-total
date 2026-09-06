@@ -12,7 +12,7 @@
 <title>ガチ艇｜競艇 個人用予想サイト</title>
 <style>
 :root{--blue:#0878ff;--blue2:#0053c7;--navy:#07111f;--panel:#0d1a2a;--line:#28415e;--text:#eef6ff;--muted:#9db1c8;--gold:#ffd45a;--red:#ff5570;--green:#41df9a}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#030914,#081523 55%,#050b13);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif}button,select{font:inherit}.wrap{max-width:980px;margin:auto;padding:14px}.hero{position:relative;overflow:hidden;border:1px solid #1e5aa0;border-radius:22px;background:radial-gradient(circle at 85% 10%,#1494ff55,transparent 35%),linear-gradient(135deg,#061425,#0b2c52);padding:20px 18px 18px;box-shadow:0 12px 40px #0008}.hero:after{content:"";position:absolute;left:-5%;right:-5%;bottom:0;height:38px;background:linear-gradient(170deg,transparent 44%,#1798ff30 46%,transparent 50%,#1798ff18 54%,transparent 58%);transform:skewY(-2deg)}.brand{display:flex;align-items:center;gap:14px;position:relative;z-index:2}.brand img{width:74px;height:74px;border-radius:19px;object-fit:cover;box-shadow:0 6px 18px #0008}.logoText{font-weight:1000;font-size:clamp(36px,9vw,62px);line-height:.9;letter-spacing:.04em;text-shadow:3px 4px 0 #001c43}.subtitle{margin:10px 0 0;color:#cce5ff;font-weight:800;letter-spacing:.12em}.boatArt{position:absolute;right:8px;bottom:4px;width:45%;max-width:360px;opacity:.95;pointer-events:none}.nav{display:flex;gap:8px;overflow:auto;margin:12px 0}.nav a{white-space:nowrap;text-decoration:none;color:#cde5ff;border:1px solid var(--line);background:#0b1725;border-radius:999px;padding:9px 14px;font-weight:800}.nav a:first-child{background:var(--blue);border-color:var(--blue);color:white}.card{background:linear-gradient(180deg,#0d1b2b,#091421);border:1px solid var(--line);border-radius:18px;padding:16px;margin:14px 0;box-shadow:0 8px 25px #0005}.card h2{margin:0 0 12px;font-size:20px}.sectionTag{display:inline-block;background:#0d63c9;border-radius:7px;padding:4px 9px;font-size:12px;margin-bottom:8px;font-weight:900}.venueGrid{display:grid;grid-template-columns:1fr;gap:12px}.field label{display:block;color:#b9cee4;font-size:13px;font-weight:800;margin-bottom:6px}.select{width:100%;min-height:46px;background:#07111d;color:white;border:1px solid #3a5875;border-radius:11px;padding:0 12px;outline:none}.select:focus{border-color:#2b9cff;box-shadow:0 0 0 3px #168cff22}.boatCard{border:1px solid #26435f;border-radius:16px;padding:14px;background:linear-gradient(180deg,#101f31,#0a1522);margin-bottom:12px}.boatHead{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}.boatNo{width:42px;height:42px;display:grid;place-items:center;border-radius:10px;font-size:21px;font-weight:1000;color:#111;background:white}.b1{background:white}.b2{background:#111;color:white;border:1px solid #667}.b3{background:#e33;color:white}.b4{background:#1687ff;color:white}.b5{background:#ffd21c;color:#111}.b6{background:#20b97a;color:white}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:9px}.sum{margin-top:10px;padding:10px;border-radius:10px;background:#07111d;border:1px solid #203a55;display:flex;justify-content:space-between;align-items:center}.sum strong{font-size:20px;color:var(--gold)}.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.btn{border:0;border-radius:12px;padding:13px 12px;font-weight:1000;cursor:pointer}.primary{background:linear-gradient(135deg,#0b8bff,#075bd7);color:white}.secondary{background:#14263a;color:#dcecff;border:1px solid #35536f}.notice{color:#9db1c8;font-size:12px;line-height:1.7}.tableWrap{overflow:auto;border:1px solid #29445f;border-radius:12px}.summaryTable{width:100%;border-collapse:collapse;min-width:760px}.summaryTable th,.summaryTable td{padding:9px 8px;border-bottom:1px solid #21384f;text-align:center}.summaryTable th{background:#0d2339;color:#bfe1ff;font-size:12px}.summaryTable td{font-size:13px}.score{color:var(--gold);font-weight:1000}.venueBox{margin-top:12px;border-left:4px solid var(--blue);background:#08192a;padding:12px;border-radius:10px;line-height:1.65}.venueBox b{color:#7dc1ff}.predictions{display:grid;gap:8px}.prediction{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #29445f;border-radius:12px;background:#0b1827}.rank{width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:#17385a;font-weight:1000}.combo{font-size:20px;font-weight:1000;letter-spacing:.08em;flex:1}.pScore{color:var(--gold);font-weight:1000}.rules{display:grid;gap:8px}.rule{padding:10px 12px;background:#081827;border:1px solid #203b56;border-radius:10px;color:#d7e7f7;line-height:1.55}.advice{display:grid;grid-template-columns:1fr 1fr;gap:9px}.advice div{background:#0b1928;border:1px solid #28435d;border-radius:11px;padding:10px;line-height:1.55}.advice b{color:#72bcff}.footer{text-align:center;color:#7189a2;font-size:11px;padding:20px}.empty{padding:20px;text-align:center;color:#8fa5ba}.mini{font-size:11px;color:#829ab3}.danger{color:#ff8396}.ok{color:#55e6a6}@media(max-width:620px){.wrap{padding:9px}.hero{padding:16px}.brand img{width:60px;height:60px}.logoText{font-size:42px}.boatArt{width:52%;opacity:.65}.grid3{grid-template-columns:1fr}.grid2,.actions,.advice{grid-template-columns:1fr}.card{padding:13px}.summaryTable{min-width:700px}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#030914,#081523 55%,#050b13);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Noto Sans JP","Hiragino Kaku Gothic ProN",Meiryo,sans-serif}button,select{font:inherit}.wrap{max-width:980px;margin:auto;padding:14px}.hero{position:relative;overflow:hidden;border:1px solid #1e5aa0;border-radius:22px;background:radial-gradient(circle at 85% 10%,#1494ff55,transparent 35%),linear-gradient(135deg,#061425,#0b2c52);padding:20px 18px 18px;box-shadow:0 12px 40px #0008}.hero:after{content:"";position:absolute;left:-5%;right:-5%;bottom:0;height:38px;background:linear-gradient(170deg,transparent 44%,#1798ff30 46%,transparent 50%,#1798ff18 54%,transparent 58%);transform:skewY(-2deg)}.brand{display:flex;align-items:center;gap:14px;position:relative;z-index:2}.brand img{width:74px;height:74px;border-radius:19px;object-fit:cover;box-shadow:0 6px 18px #0008}.logoText{font-weight:1000;font-size:clamp(36px,9vw,62px);line-height:.9;letter-spacing:.04em;text-shadow:3px 4px 0 #001c43}.subtitle{margin:10px 0 0;color:#cce5ff;font-weight:800;letter-spacing:.12em}.boatArt{position:absolute;right:8px;bottom:4px;width:45%;max-width:360px;opacity:.95;pointer-events:none}.raceMini{display:flex;justify-content:space-between;align-items:center;margin:-2px 0 12px;padding:8px 10px;border:1px solid #1d4163;border-radius:12px;background:linear-gradient(90deg,#071827,#0b2842);overflow:hidden}.raceMini svg{width:92px;height:34px;flex:none}.raceMini span{font-size:11px;color:#8ecbff;font-weight:900;letter-spacing:.08em}.sectionTitleBoat{display:inline-flex;vertical-align:middle;margin-right:7px;width:30px;height:24px}.sectionTitleBoat svg{width:30px;height:24px}.laneArt{margin-top:10px;display:grid;grid-template-columns:repeat(6,1fr);gap:4px}.laneArt span{height:7px;border-radius:99px;background:#173a58;position:relative}.laneArt span:after{content:"";position:absolute;right:3px;top:2px;width:8px;height:3px;border-radius:99px;background:#2d9fff}.boatCard .courseWrap{margin-bottom:9px}.courseBadge{font-size:11px;color:#75bdff;margin-top:5px}.waterLine{height:22px;margin:8px -2px 2px;background:repeating-linear-gradient(0deg,transparent 0 5px,#1a75b522 6px,#1a75b522 7px);border-radius:8px}.nav{display:flex;gap:8px;overflow:auto;margin:12px 0}.nav a{white-space:nowrap;text-decoration:none;color:#cde5ff;border:1px solid var(--line);background:#0b1725;border-radius:999px;padding:9px 14px;font-weight:800}.nav a:first-child{background:var(--blue);border-color:var(--blue);color:white}.card{background:linear-gradient(180deg,#0d1b2b,#091421);border:1px solid var(--line);border-radius:18px;padding:16px;margin:14px 0;box-shadow:0 8px 25px #0005}.card h2{margin:0 0 12px;font-size:20px}.sectionTag{display:inline-block;background:#0d63c9;border-radius:7px;padding:4px 9px;font-size:12px;margin-bottom:8px;font-weight:900}.venueGrid{display:grid;grid-template-columns:1fr;gap:12px}.field label{display:block;color:#b9cee4;font-size:13px;font-weight:800;margin-bottom:6px}.select{width:100%;min-height:46px;background:#07111d;color:white;border:1px solid #3a5875;border-radius:11px;padding:0 12px;outline:none}.select:focus{border-color:#2b9cff;box-shadow:0 0 0 3px #168cff22}.boatCard{border:1px solid #26435f;border-radius:16px;padding:14px;background:linear-gradient(180deg,#101f31,#0a1522);margin-bottom:12px;position:relative;overflow:hidden}.boatCard:after{content:"";position:absolute;left:-10%;right:-10%;bottom:-8px;height:20px;background:repeating-linear-gradient(0deg,transparent 0 5px,#1687ff14 6px,#1687ff14 7px);pointer-events:none}.boatCardArt{width:88px;height:34px;opacity:.8;flex:none}.boatHead{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}.boatNo{width:42px;height:42px;display:grid;place-items:center;border-radius:10px;font-size:21px;font-weight:1000;color:#111;background:white}.b1{background:white}.b2{background:#111;color:white;border:1px solid #667}.b3{background:#e33;color:white}.b4{background:#1687ff;color:white}.b5{background:#ffd21c;color:#111}.b6{background:#20b97a;color:white}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:9px}.sum{margin-top:10px;padding:10px;border-radius:10px;background:#07111d;border:1px solid #203a55;display:flex;justify-content:space-between;align-items:center}.sum strong{font-size:20px;color:var(--gold)}.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.btn{border:0;border-radius:12px;padding:13px 12px;font-weight:1000;cursor:pointer}.primary{background:linear-gradient(135deg,#0b8bff,#075bd7);color:white}.secondary{background:#14263a;color:#dcecff;border:1px solid #35536f}.notice{color:#9db1c8;font-size:12px;line-height:1.7}.tableWrap{overflow:auto;border:1px solid #29445f;border-radius:12px}.summaryTable{width:100%;border-collapse:collapse;min-width:760px}.summaryTable th,.summaryTable td{padding:9px 8px;border-bottom:1px solid #21384f;text-align:center}.summaryTable th{background:#0d2339;color:#bfe1ff;font-size:12px}.summaryTable td{font-size:13px}.score{color:var(--gold);font-weight:1000}.venueBox{margin-top:12px;border-left:4px solid var(--blue);background:#08192a;padding:12px;border-radius:10px;line-height:1.65}.venueBox b{color:#7dc1ff}.predictions{display:grid;gap:8px}.prediction{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #29445f;border-radius:12px;background:#0b1827}.rank{width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:#17385a;font-weight:1000}.combo{font-size:20px;font-weight:1000;letter-spacing:.08em;flex:1}.pScore{color:var(--gold);font-weight:1000}.rules{display:grid;gap:8px}.rule{padding:10px 12px;background:#081827;border:1px solid #203b56;border-radius:10px;color:#d7e7f7;line-height:1.55}.advice{display:grid;grid-template-columns:1fr 1fr;gap:9px}.advice div{background:#0b1928;border:1px solid #28435d;border-radius:11px;padding:10px;line-height:1.55}.advice b{color:#72bcff}.footer{text-align:center;color:#7189a2;font-size:11px;padding:20px}.empty{padding:20px;text-align:center;color:#8fa5ba}.mini{font-size:11px;color:#829ab3}.danger{color:#ff8396}.ok{color:#55e6a6}@media(max-width:620px){.wrap{padding:9px}.hero{padding:16px}.brand img{width:60px;height:60px}.logoText{font-size:42px}.boatArt{width:52%;opacity:.65}.grid3{grid-template-columns:1fr}.grid2,.actions,.advice{grid-template-columns:1fr}.card{padding:13px}.summaryTable{min-width:700px}}
 </style>
 </head>
 <body>
@@ -26,45 +26,46 @@
     <path d="M4 123c70-23 125 20 194-3 66-22 125 16 218-7" fill="none" stroke="#2ba7ff" stroke-width="7" opacity=".8"/>
   </svg>
 </header>
-<nav class="nav"><a href="#input">入力</a><a href="#summary">入力データ</a><a href="#prediction">三連単</a><a href="#advice">アドバイス</a></nav>
+<nav class="nav"><a href="#input">入力</a><a href="#summary">入力データ</a><a href="#prediction">三連単</a><a href="#simulation">シミュレーション</a><a href="#advice">アドバイス</a></nav>
 
 <section class="card" id="input">
-  <span class="sectionTag">STEP 1</span><h2>競艇場を選択</h2>
+  <span class="sectionTag">STEP 1</span><h2><span class="sectionTitleBoat"><svg viewBox="0 0 60 48" aria-hidden="true"><path d="M4 32h45l-7 9H13z" fill="#e8f3ff" stroke="#79bfff" stroke-width="3"/><path d="M18 30V15h12v15M30 30V9h12v21" fill="#1687ff" stroke="#cceaff" stroke-width="3"/><path d="M2 39c12-5 22 5 34 0 10-4 15 3 23-1" fill="none" stroke="#2ba7ff" stroke-width="3"/></svg></span>競艇場を選択</h2>
   <div class="field"><label>今回の開催場</label><select id="venue" class="select"></select></div>
   <div id="venuePreview" class="venueBox"><b>競艇場の特徴</b><br>競艇場を選択すると、特徴とおすすめ出目を表示します。</div>
+  <div class="grid2" style="margin-top:12px">
+    <div class="field"><label>風</label><select id="wind" class="select" data-key="wind"><option value="無風">無風</option><option value="追い風">追い風</option><option value="左横風">左横風</option><option value="向かい風">向かい風</option><option value="右横風">右横風</option></select></div>
+    <div class="field"><label>波</label><select id="wave" class="select" data-key="wave"><option value="波高なし">波高なし</option><option value="波高4cm以上">波高4cm以上</option></select></div>
+  </div>
 </section>
 
 <section class="card">
-  <span class="sectionTag">STEP 2</span><h2>6艇の入力データ</h2>
-  <p class="notice">展示タイムは17.00～22.00を0.10刻みで選択。過去10走は1着数と着内数を入力してください。</p>
+  <span class="sectionTag">STEP 2</span><h2><span class="sectionTitleBoat"><svg viewBox="0 0 60 48" aria-hidden="true"><path d="M4 32h45l-7 9H13z" fill="#e8f3ff" stroke="#79bfff" stroke-width="3"/><path d="M18 30V15h12v15M30 30V9h12v21" fill="#1687ff" stroke="#cceaff" stroke-width="3"/><circle cx="24" cy="21" r="2.5" fill="#fff"/><circle cx="36" cy="15" r="2.5" fill="#fff"/></svg></span>6艇の入力データ</h2>
+  <div class="raceMini"><span>🚤 RACE DATA / 6 BOATS</span><svg viewBox="0 0 180 60" aria-hidden="true"><path d="M5 40h150l-18 12H28z" fill="#e8f3ff" stroke="#79bfff" stroke-width="3"/><path d="M38 38V20h25v18M63 38V13h28v25M91 38V18h26v20" fill="#1687ff" stroke="#cceaff" stroke-width="3"/><path d="M2 50c35-13 58 8 88-2 28-9 53 7 88-4" fill="none" stroke="#2ba7ff" stroke-width="4"/></svg></div><p class="notice">展示タイムは17.00～22.00を0.10刻み。過去10走は1着数・着内数、階級、今節の調子、実際の出走コースを入力してください。</p>
   <div id="boats"></div>
   <div class="actions"><button class="btn primary" id="reflect">入力データを反映</button><button class="btn secondary" id="predict">三連単を予想する</button></div>
 </section>
 
 <section class="card" id="summary">
-  <span class="sectionTag">STEP 3</span><h2>最終の入力データ</h2>
+  <span class="sectionTag">STEP 3</span><h2><span class="sectionTitleBoat"><svg viewBox="0 0 60 48" aria-hidden="true"><path d="M4 32h45l-7 9H13z" fill="#e8f3ff" stroke="#79bfff" stroke-width="3"/><path d="M18 30V15h12v15M30 30V9h12v21" fill="#1687ff" stroke="#cceaff" stroke-width="3"/></svg></span>最終の入力データ</h2>
   <div id="summaryContent" class="empty">「入力データを反映」を押すと6艇分を表示します。</div>
 </section>
 
 <section class="card" id="prediction">
-  <span class="sectionTag">STEP 4</span><h2>三連単予想 TOP10</h2>
-  <p class="notice">入力した各艇のポイント合計が多い艇を有利として、120通りから上位10通りを表示します。競艇場そのものにはポイントを付けません。展示タイムは小さいほど高得点です。</p>
-  <div id="predictionContent" class="empty">「三連単を予想する」を押してください。</div>
+  <span class="sectionTag">STEP 4</span><h2><span class="sectionTitleBoat"><svg viewBox="0 0 60 48" aria-hidden="true"><path d="M4 32h45l-7 9H13z" fill="#e8f3ff" stroke="#79bfff" stroke-width="3"/><path d="M18 30V15h12v15M30 30V9h12v21" fill="#1687ff" stroke="#cceaff" stroke-width="3"/><path d="M2 40c12-5 22 5 34 0 10-4 15 3 23-1" fill="none" stroke="#2ba7ff" stroke-width="3"/></svg></span>三連単予想 TOP10</h2>
+  <p class="notice">入力した各艇のポイント合計が多い艇を有利として、120通りから上位10通りを表示します。競艇場そのものにはポイントを付けません。展示タイムは小さいほど高得点。艇番そのもののポイントは廃止し、実際の出走コースをポイント化します。</p>
+  <div class="raceMini"><span>🏁 120 COMBINATIONS / TOP 10</span><svg viewBox="0 0 180 60" aria-hidden="true"><path d="M5 40h150l-18 12H28z" fill="#e8f3ff" stroke="#79bfff" stroke-width="3"/><path d="M38 38V20h25v18M63 38V13h28v25M91 38V18h26v20" fill="#1687ff" stroke="#cceaff" stroke-width="3"/><path d="M2 50c35-13 58 8 88-2 28-9 53 7 88-4" fill="none" stroke="#2ba7ff" stroke-width="4"/></svg></div><div id="predictionContent" class="empty">「三連単を予想する」を押してください。</div>
 </section>
 
-<section class="card">
-  <span class="sectionTag">POINT</span><h2>ポイントルール</h2>
-  <div class="rules">
-    <div class="rule"><b>展示タイム：</b>6艇の数値を小さい順に 3 / 2.5 / 2 / 1.5 / 1 / 0 点</div>
-    <div class="rule"><b>過去10走：</b>1着数6以上＝3点、着内数6以上＝1.5点</div>
-    <div class="rule"><b>階級：</b>A1＝2点、A2・B1・B2＝1点</div>
-    <div class="rule"><b>調子：</b>1＝3、2＝2.5、3＝2、4＝1.5、5＝1、6＝0.5点</div>
-    <div class="rule"><b>艇番：</b>1号艇＝3点、2～4号艇＝2点、5～6号艇＝1点</div>
-  </div>
+<section class="card" id="simulation">
+  <span class="sectionTag">STEP 5</span><h2><span class="sectionTitleBoat"><svg viewBox="0 0 60 48" aria-hidden="true"><path d="M4 32h45l-7 9H13z" fill="#e8f3ff" stroke="#79bfff" stroke-width="3"/><path d="M18 30V15h12v15M30 30V9h12v21" fill="#1687ff" stroke="#cceaff" stroke-width="3"/><path d="M2 39c12-5 22 5 34 0 10-4 15 3 23-1" fill="none" stroke="#2ba7ff" stroke-width="3"/></svg></span>10回シミュレーション</h2>
+  <p class="notice">入力データを使って、競艇を基準に3周走った想定で10レースをランダムシミュレーションします。展示タイムは約半周タイムとして扱い、出走コース・階級・調子のポイントが高い艇ほど有利になるようにしています。風・波の影響も反映します。可視化は行わず、結果のみ表示します。</p>
+  <div class="raceMini"><span>🏁 3 LAPS / 10 RACES</span><svg viewBox="0 0 180 60" aria-hidden="true"><path d="M5 40h150l-18 12H28z" fill="#e8f3ff" stroke="#79bfff" stroke-width="3"/><path d="M38 38V20h25v18M63 38V13h28v25M91 38V18h26v20" fill="#1687ff" stroke="#cceaff" stroke-width="3"/><path d="M2 50c35-13 58 8 88-2 28-9 53 7 88-4" fill="none" stroke="#2ba7ff" stroke-width="4"/></svg></div>
+  <button class="btn primary" id="simulate" style="width:100%;font-size:17px">10回シミュレーションする</button>
+  <div id="simulationContent" class="empty">「10回シミュレーションする」を押してください。</div>
 </section>
 
 <section class="card" id="advice">
-  <span class="sectionTag">ADVICE</span><h2>アドバイスポイント</h2>
+  <span class="sectionTag">ADVICE</span><h2><span class="sectionTitleBoat"><svg viewBox="0 0 60 48" aria-hidden="true"><path d="M5 30h45l-7 8H14z" fill="#e8f3ff" stroke="#79bfff" stroke-width="3"/><path d="M21 29V16h12v13M33 29V11h10v18" fill="#1687ff" stroke="#cceaff" stroke-width="3"/><path d="M4 39c13-5 22 5 34 0 9-4 14 2 20-1" fill="none" stroke="#2ba7ff" stroke-width="3"/></svg></span>アドバイスポイント</h2>
   <div class="advice">
     <div>追い風時 → <b>スロー有利</b></div><div>向かい風時 → <b>ダッシュ有利</b></div>
     <div>左横風時 → <b>スロー有利</b></div><div>右横風時 → <b>ダッシュ有利</b></div>
@@ -72,6 +73,17 @@
     <div>気温低い時 → <b>直線タイムが良い人有利</b></div>
   </div>
 </section>
+<section class="card">
+  <span class="sectionTag">POINT</span><h2><span class="sectionTitleBoat"><svg viewBox="0 0 60 48" aria-hidden="true"><circle cx="30" cy="24" r="19" fill="#0d63c9"/><path d="M14 27h29l-5 7H20z" fill="#fff"/><path d="M25 25v-9h10v9" fill="#6fc1ff"/></svg></span>ポイントルール</h2>
+  <div class="rules">
+    <div class="rule"><b>展示タイム：</b>6艇の数値を小さい順に 3 / 2.5 / 2 / 1.5 / 1 / 0 点</div>
+    <div class="rule"><b>過去10走：</b>1着数6以上＝3点、着内数6以上＝1.5点</div>
+    <div class="rule"><b>階級：</b>A1＝3点、A2＝2点、B1＝1点、B2＝0点</div>
+    <div class="rule"><b>調子：</b>1＝3、2＝2.5、3＝2、4＝1.5、5＝1、6＝0.5点</div>
+    <div class="rule"><b>実際の出走コース：</b>1コース＝3点、2～4コース＝2点、5～6コース＝1点</div>
+  </div>
+</section>
+
 <div class="footer">ガチ艇｜個人用予想サイト<br>※予想は参考情報です。投票は自己責任で。</div>
 </div>
 <script>
@@ -113,7 +125,8 @@ const classOpts=['A1','A2','B1','B2'];
 const boats=document.getElementById('boats');
 for(let n=1;n<=6;n++){
  boats.insertAdjacentHTML('beforeend',`<div class="boatCard" data-boat="${n}">
- <div class="boatHead"><div class="boatNo b${n}">${n}</div><div class="mini">${n}号艇｜入力</div></div>
+ <div class="boatHead"><div class="boatNo b${n}">${n}</div><div class="mini">${n}号艇｜入力</div><svg class="boatCardArt" viewBox="0 0 100 38" aria-hidden="true"><path d="M5 25h78l-10 8H20z" fill="#e8f3ff" stroke="#79bfff" stroke-width="2"/><path d="M28 24V13h18v11M46 24V8h20v16" fill="#1687ff" stroke="#cceaff" stroke-width="2"/><circle cx="37" cy="17" r="2" fill="#fff"/><circle cx="56" cy="13" r="2" fill="#fff"/><path d="M2 32c20-7 34 4 51-1 15-4 28 4 45-2" fill="none" stroke="#2ba7ff" stroke-width="2"/></svg></div>
+ <div class="field courseWrap"><label>実際の出走コース</label><select class="select course" data-key="course">${opts([1,2,3,4,5,6].map(x=>x+'コース'))}</select><div class="courseBadge">3連単参照：1コース=3pt / 2〜4コース=2pt / 5〜6コース=1pt</div></div>
  <div class="field"><label>展示タイム</label><select class="select ex" data-key="ex">${opts(timeOpts)}</select></div>
  <div class="grid2">
   <div class="field"><label>過去10走｜1着数</label><select class="select first" data-key="first">${opts(zeroTen)}</select></div>
@@ -123,19 +136,64 @@ for(let n=1;n<=6;n++){
  </div>
  </div>`);
 }
-function getData(){return [...document.querySelectorAll('.boatCard')].map((card,i)=>{const q=s=>card.querySelector(s).value;const ex=+q('.ex[data-key="ex"]');return{n:i+1,ex,first:+q('.first'),in3:+q('.in3'),cls:q('.cls'),form:+q('.form')}})}
+function getData(){return [...document.querySelectorAll('.boatCard')].map((card,i)=>{const q=s=>card.querySelector(s).value;const ex=+q('.ex[data-key="ex"]');return{n:i+1,course:+q('.course').replace('コース',''),ex,first:+q('.first'),in3:+q('.in3'),cls:q('.cls'),form:+q('.form')}})}
 function points(data){
  const sorted=[...data].sort((a,b)=>a.ex-b.ex||a.n-b.n);
  const exPts=[3,2.5,2,1.5,1,0];
  const exMap=new Map(sorted.map((x,i)=>[x.n,exPts[i]]));
- return data.map(x=>{const exhibition=exMap.get(x.n), past=(x.first>=6?3:0)+(x.in3>=6?1.5:0), cls=x.cls==='A1'?2:1, form=[3,2.5,2,1.5,1,.5][x.form-1], boat=x.n===1?3:(x.n<=4?2:1);return{...x,exhibition,past,cls,form,boat,total:+(exhibition+past+cls+form+boat).toFixed(1)}})
+ return data.map(x=>{const exhibition=exMap.get(x.n), past=(x.first>=6?3:0)+(x.in3>=6?1.5:0), cls=x.cls==='A1'?3:(x.cls==='A2'?2:(x.cls==='B1'?1:0)), form=[3,2.5,2,1.5,1,.5][x.form-1], course=x.course===1?3:(x.course<=4?2:1);return{...x,exhibition,past,cls,form,course,total:+(exhibition+past+cls+form+course).toFixed(1)}})
 }
-function renderSummary(){const scored=points(getData());const venue=venueEl.value;document.getElementById('summaryContent').innerHTML=`<div class="tableWrap"><table class="summaryTable"><thead><tr><th>艇</th><th>展示タイム</th><th>1着数</th><th>着内数</th><th>階級</th><th>調子</th><th>合計Pt</th></tr></thead><tbody>${scored.map(x=>`<tr><td>${x.n}号艇</td><td>${x.ex.toFixed(2)}</td><td>${x.first}</td><td>${x.in3}</td><td>${x.cls}</td><td>${x.form}</td><td class="score">${x.total.toFixed(1)}</td></tr>`).join('')}</tbody></table></div><div class="venueBox"><b>${venue}｜場の特徴・おすすめ出目</b><br>${venues[venue][0]}<br><strong>おすすめ出目：</strong>${venues[venue][1]}</div>`;return scored}
+function renderSummary(){const scored=points(getData());const venue=venueEl.value;document.getElementById('summaryContent').innerHTML=`<div class="tableWrap"><table class="summaryTable"><thead><tr><th>艇</th><th>出走コース</th><th>展示タイム</th><th>1着数</th><th>着内数</th><th>階級</th><th>調子</th><th>合計Pt</th></tr></thead><tbody>${scored.map(x=>`<tr><td>${x.n}号艇</td><td>${x.course}コース</td><td>${x.ex.toFixed(2)}</td><td>${x.first}</td><td>${x.in3}</td><td>${x.cls}</td><td>${x.form}</td><td class="score">${x.total.toFixed(1)}</td></tr>`).join('')}</tbody></table></div><div class="venueBox"><b>${venue}｜場の特徴・おすすめ出目</b><br>${venues[venue][0]}<br><strong>おすすめ出目：</strong>${venues[venue][1]}</div>`;return scored}
 function predict(){const scored=renderSummary();const combos=[];for(let a of scored)for(let b of scored)for(let c of scored)if(a.n!==b.n&&a.n!==c.n&&b.n!==c.n)combos.push({a,b,c,total:+(a.total+b.total+c.total).toFixed(1)});
  combos.sort((x,y)=>y.total-x.total||x.a.n-y.a.n||x.b.n-y.b.n||x.c.n-y.c.n);
  const top=combos.slice(0,10);document.getElementById('predictionContent').innerHTML=`<div class="predictions">${top.map((x,i)=>`<div class="prediction"><div class="rank">${i+1}</div><div class="combo">${x.a.n}-${x.b.n}-${x.c.n}</div><div class="pScore">${x.total.toFixed(1)} pt</div></div>`).join('')}</div>`;document.getElementById('prediction').scrollIntoView({behavior:'smooth',block:'start'})}
+function simulate10(){
+ const scored=points(getData());
+ const wind=document.getElementById('wind').value;
+ const wave=document.getElementById('wave').value;
+ const results=[];
+ const winCount=new Map(scored.map(x=>[x.n,0]));
+ const place2=new Map(scored.map(x=>[x.n,0]));
+ const place3=new Map(scored.map(x=>[x.n,0]));
+ const comboCount=new Map();
+ function windAdv(course){
+   if(wind==='追い風'||wind==='左横風') return course<=3?1.2:1;
+   if(wind==='向かい風'||wind==='右横風') return course>=4?1.2:1;
+   return 1;
+ }
+ function waveAdv(course){ return wave==='波高4cm以上'&&course===1?0.72:1; }
+ function randn(){
+   let u=0,v=0; while(u===0)u=Math.random(); while(v===0)v=Math.random();
+   return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);
+ }
+ for(let r=0;r<10;r++){
+   const finish=scored.map(x=>{
+     const courseAdv=windAdv(x.course)*waveAdv(x.course);
+     const baseHalf=x.ex;
+     const pointBoost=1+(x.total*0.008);
+     const speedAdv=courseAdv*pointBoost;
+     let total=0;
+     for(let lap=0;lap<3;lap++){
+       const variation=1+(randn()*0.018);
+       total += (baseHalf*2)/speedAdv*variation;
+     }
+     return {...x,finish:total};
+   }).sort((a,b)=>a.finish-b.finish||a.n-b.n);
+   const top=finish.slice(0,3);
+   winCount.set(top[0].n,winCount.get(top[0].n)+1);
+   place2.set(top[1].n,place2.get(top[1].n)+1);
+   place3.set(top[2].n,place3.get(top[2].n)+1);
+   const combo=top.map(x=>x.n).join('-'); comboCount.set(combo,(comboCount.get(combo)||0)+1);
+   results.push(top);
+ }
+ const ranking=[...scored].map(x=>({n:x.n,w:winCount.get(x.n),s:place2.get(x.n),t:place3.get(x.n),top:(winCount.get(x.n)+place2.get(x.n)+place3.get(x.n))})).sort((a,b)=>b.w-a.w||b.top-a.top||a.n-b.n);
+ const combos=[...comboCount.entries()].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],undefined,{numeric:true}));
+ document.getElementById('simulationContent').innerHTML=`<div class="venueBox"><b>シミュレーション条件</b><br>風：${wind}｜波：${wave}｜3周 × 10回</div><div class="tableWrap" style="margin-top:10px"><table class="summaryTable"><thead><tr><th>艇</th><th>1着</th><th>2着</th><th>3着</th><th>3着以内</th></tr></thead><tbody>${ranking.map(x=>`<tr><td>${x.n}号艇</td><td class="score">${x.w}回</td><td>${x.s}回</td><td>${x.t}回</td><td>${x.top}回</td></tr>`).join('')}</tbody></table></div><div class="venueBox"><b>10回の三連単結果</b><br>${results.map((x,i)=>`${i+1}回目：<strong>${x.map(y=>y.n).join('-')}</strong>`).join('<br>')}</div><div class="venueBox"><b>出現回数</b><br>${combos.length?combos.map(x=>`${x[0]}：${x[1]}回`).join('<br>'):'なし'}</div>`;
+ document.getElementById('simulation').scrollIntoView({behavior:'smooth',block:'start'});
+}
 document.getElementById('reflect').addEventListener('click',()=>{renderSummary();document.getElementById('summary').scrollIntoView({behavior:'smooth',block:'start'})});
 document.getElementById('predict').addEventListener('click',predict);
+document.getElementById('simulate').addEventListener('click',simulate10);
 
 </script>
 
@@ -147,11 +205,17 @@ document.getElementById('predict').addEventListener('click',predict);
     return Array.from(document.querySelectorAll('select, input, textarea'));
   }
 
+  function fieldKey(el, i) {
+    if (el.id) return el.id;
+    const card = el.closest('.boatCard');
+    if (card && el.dataset.key) return 'boat' + card.dataset.boat + '_' + el.dataset.key;
+    return 'index_' + i;
+  }
+
   function save() {
     const data = {};
     fields().forEach((el, i) => {
-      const key = el.id || ('index_' + i);
-      data[key] = el.value;
+      data[fieldKey(el, i)] = el.value;
     });
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch (e) {}
   }
@@ -162,7 +226,7 @@ document.getElementById('predict').addEventListener('click',predict);
       if (!raw) return;
       const data = JSON.parse(raw);
       fields().forEach((el, i) => {
-        const key = el.id || ('index_' + i);
+        const key = fieldKey(el, i);
         if (Object.prototype.hasOwnProperty.call(data, key)) {
           el.value = data[key];
           el.dispatchEvent(new Event('change', {bubbles:true}));
