@@ -106,7 +106,7 @@ names.forEach(v=>{const o=document.createElement('option');o.value=v;o.textConte
 venueEl.addEventListener('change',showVenue);
 function showVenue(){const [a,b]=venues[venueEl.value];document.getElementById('venuePreview').innerHTML=`<b>${venueEl.value}｜競艇場の特徴</b><br>${a}<br><strong>おすすめ出目：</strong>${b}`}
 showVenue();
-const timeOpts=Array.from({length:31},(_,i)=>(17+i*.1).toFixed(2));
+const timeOpts=Array.from({length:51},(_,i)=>(17+i*.1).toFixed(2));
 const zeroTen=Array.from({length:11},(_,i)=>i);
 function opts(arr){return arr.map(x=>`<option value="${x}">${x}</option>`).join('')}
 const classOpts=['A1','A2','B1','B2'];
